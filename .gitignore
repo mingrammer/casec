@@ -1,0 +1,10 @@
+# Vendor
+vendor/
+
+# Build & binary
+dist/
+flog
+
+# Editors
+.vscode/
+

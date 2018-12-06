@@ -1,0 +1,28 @@
+package main
+
+import (
+	"compress/gzip"
+	"io"
+	"os"
+)
+
+func newWriter(logType string, logFileName string) (io.WriteCloser, error) {
+	switch logType {
+	case "stdout":
+		return os.Stdout, nil
+	case "log":
+		logFile, err := os.Create(logFileName)
+		if err != nil {
+			return nil, err
+		}
+		return logFile, nil
+	case "gz":
+		logFile, err := os.Create(logFileName)
+		if err != nil {
+			return nil, err
+		}
+		return gzip.NewWriter(logFile), nil
+	default:
+		return nil, nil
+	}
+}

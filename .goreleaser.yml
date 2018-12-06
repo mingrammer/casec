@@ -1,0 +1,51 @@
+project_name: casec
+
+before:
+  hooks:
+    - go mod download
+
+builds:
+  - main: ./cmd
+    binary: casec
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - Merge pull request
+    - Merge branch
+
+archive:
+  format: tar.gz
+  name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+  files:
+    - LICENSE
+    - README.md
+
+release:
+  github:
+    owner: mingrammer
+    name: casec
+  name_template: '{{.Tag}}'
+
+brew:
+  name: casec
+  github:
+    owner: mingrammer
+    name: casec
+  commit_author:
+    name: mingrammer
+    email: mingrammer@gmail.com
+  folder: formula
+  homepage: https://github.com/mingrammer/casec
+  description: "A text case converter"
+  install: bin.install "casec"
+  test: |
+    system "#{bin}/casec -v"

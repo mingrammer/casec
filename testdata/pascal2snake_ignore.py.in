@@ -1,0 +1,14 @@
+import json
+
+from fitter.cachestore import CacheStore
+
+
+class InMemoryStore(CacheStore):
+    def __init__(self):
+        self.KVStore = {}
+
+    def get(self, Key):
+        return json.loads(self.KVStore[Key]) if Key in self.KVStore else None
+
+    def set(self, Key, Value):
+        self.KVStore[Key] = json.dumps(Value)

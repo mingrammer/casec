@@ -1,0 +1,19 @@
+import sys
+
+
+def ParseURI(uri):
+    """Extracts the host, port and db from an uri"""
+    host, port, db = uri, 6379, 0
+    if len(host.split('/')) == 2:
+        host, db = host.split('/')
+    if len(host.split(':')) == 2:
+        host, port = host.split(':')
+    return host, int(port), int(db)
+
+
+if __name__ == '__main__':
+    argv = sys.argv
+    IPAddress, Port, DBNum = ParseURI(argv)
+    print("ip address: ", IPAddress)
+    print("port: ", Port)
+    print("db: ", DBNum)

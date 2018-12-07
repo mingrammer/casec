@@ -1,0 +1,15 @@
+language: go
+
+go:
+  - "1.9"
+  - "1.10"
+  - "1.11"
+  - "master"
+
+os:
+  - linux
+  - osx
+
+script:
+  - env GO111MODULE=on go build ./cmd
+  - env GO111MODULE=on go test ./...

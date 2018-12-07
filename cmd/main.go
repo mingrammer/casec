@@ -57,7 +57,7 @@ func main() {
 		},
 		cli.BoolFlag{
 			Name:  "dry-run, d",
-			Usage: "Show diff without actual converting",
+			Usage: "Show diff between before and after conversion without actually applying",
 		},
 	}
 	app.Action = func(ctx *cli.Context) error {

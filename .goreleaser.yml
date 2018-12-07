@@ -39,7 +39,7 @@ brew:
   name: casec
   github:
     owner: mingrammer
-    name: casec
+    name: casec-tap
   commit_author:
     name: mingrammer
     email: mingrammer@gmail.com

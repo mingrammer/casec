@@ -23,6 +23,8 @@ It also provides case conversion library not only command line tool.
 
 ### Using go get
 
+> Go version 1.10 or higher is required.
+
 ```
 go get github.com/mingrammer/casec/...
 ```

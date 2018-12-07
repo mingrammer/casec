@@ -19,6 +19,7 @@ changelog:
   filters:
     exclude:
     - '^docs:'
+    - Update README.md
     - Merge pull request
     - Merge branch
 

@@ -93,7 +93,7 @@ import (
 
 
 func main() {
-    fmt.Pritnln(casec.IsSnakeCase("this_is_snake"))
+    fmt.Println(casec.IsSnakeCase("this_is_snake"))
     // Output: true
     fmt.Println(casec.IsCamelCase("thisIsNot_camelCase"))
     // Output: false

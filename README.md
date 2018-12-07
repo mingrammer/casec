@@ -85,15 +85,16 @@ $ casec -f snake -t pascal -i '^package|var|const|if|for|range|return|func|go$' 
 > See details in [GoDoc](https://godoc.org/github.com/mingrammer/casec)
 
 ```go
+package main
+
 import (
     "fmt"
-    
+
     "github.com/mingrammer/casec"
 )
 
-
 func main() {
-    fmt.Pritnln(casec.IsSnakeCase("this_is_snake"))
+    fmt.Println(casec.IsSnakeCase("this_is_snake"))
     // Output: true
     fmt.Println(casec.IsCamelCase("thisIsNot_camelCase"))
     // Output: false
@@ -106,7 +107,7 @@ func main() {
 
 ## Known issues
 
-casec separates the words with non-letters (except `-` and `_`) including `.` or `/` letters. So, the `ignore` option of casec can not recognize the dot-or-slash separated word (ex. `"github.com/mingrammer/cfmt"`) as a single chunk. So if you want to prevent the import path of Go source code, for example, `import "github.com/mingrammer/cfmt"` from converting,  you should pass the ignore expression as `-i "^github|com|mingrammer|cfmt$"`.
+casec separates the words with non-letters (except `-` and `_`) including `.` and `/` letters. So, the `ignore` option of casec can not recognize the dot-or-slash separated word (ex. `"github.com/mingrammer/cfmt"`) as a single chunk. So if you want to prevent the import path of Go source code, for example, `import "github.com/mingrammer/cfmt"` from converting,  you should pass the ignore expression as `-i "^github|com|mingrammer|cfmt$"`.
 
 Here are the solutions that I'll consider making it an option for solving this issue.
 

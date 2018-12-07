@@ -85,12 +85,13 @@ $ casec -f snake -t pascal -i '^package|var|const|if|for|range|return|func|go$' 
 > See details in [GoDoc](https://godoc.org/github.com/mingrammer/casec)
 
 ```go
+package main
+
 import (
     "fmt"
-    
+
     "github.com/mingrammer/casec"
 )
-
 
 func main() {
     fmt.Println(casec.IsSnakeCase("this_is_snake"))

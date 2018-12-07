@@ -32,7 +32,7 @@ go get github.com/mingrammer/casec/...
 If you want to only download the `casec` library
 
 ```
-go get github.com/mingrammer/case
+go get github.com/mingrammer/casec
 ```
 
 ### Using [homebrew](https://brew.sh)

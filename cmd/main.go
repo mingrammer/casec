@@ -41,23 +41,23 @@ func main() {
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "from, f",
-			Usage: "Source `CASE` in {upper,lower,title,camel,pascal,snake,kebab,lisp}",
+			Usage: "source `CASE` in {upper,lower,title,camel,pascal,snake,kebab,lisp}",
 		},
 		cli.StringFlag{
 			Name:  "to, t",
-			Usage: "Target `CASE` in {upper,lower,title,camel,pascal,snake,kebab,lisp}",
+			Usage: "target `CASE` in {upper,lower,title,camel,pascal,snake,kebab,lisp}",
 		},
 		cli.StringSliceFlag{
 			Name:  "ignore, i",
-			Usage: "Ignore the text that matches the `PATTERNS`",
+			Usage: "ignore the text that matches the `PATTERNS`",
 		},
 		cli.BoolFlag{
 			Name:  "text, x",
-			Usage: "Read the input as raw text, not a file path",
+			Usage: "read the input as raw text, not a file path",
 		},
 		cli.BoolFlag{
 			Name:  "dry-run, n",
-			Usage: "Show how would have been converted",
+			Usage: "show how would have been converted",
 		},
 	}
 	app.Action = func(ctx *cli.Context) error {

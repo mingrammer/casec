@@ -62,7 +62,7 @@ Convert all snake case to camel case.
 $ casec -f snake -t camel internal.go
 ```
 
-Show diff between before and after conversion without actually applying. (dry-run)
+Show how would have been converted. (dry-run)
 
 ```bash
 $ casec -f snake -t kebab -d match.lisp

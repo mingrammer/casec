@@ -32,7 +32,7 @@ go get github.com/mingrammer/casec/...
 If you want to only download the `casec` library
 
 ```
-go get github.com/mingrammer/case
+go get github.com/mingrammer/casec
 ```
 
 ### Using [homebrew](https://brew.sh)
@@ -100,8 +100,10 @@ func main() {
     // Output: false
     fmt.Println(casec.Invert("Invert Me"))
     // Output: iNVERT mE
-    fmt.Println(casec.ToSnakeCase("IPAddress"))
-    // Output: ip_address
+    fmt.Println(casec.ToCamelCase("write_rune"))
+    // Output: writeRune
+    fmt.Println(casec.ToSnakeCase("simpleJSONParser"))
+    // Output: simple_json_parser
 }
 ```
 

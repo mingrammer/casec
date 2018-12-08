@@ -65,7 +65,7 @@ $ casec -f snake -t camel internal.go
 Show how would have been converted. (dry-run)
 
 ```bash
-$ casec -f snake -t kebab -d match.lisp
+$ casec -f snake -t kebab -n match.lisp
 ```
 
 Convert all camel case to snake case except for words you don't want to convert. It is useful for preventing the keywords (reserved words) or conventions from converting.

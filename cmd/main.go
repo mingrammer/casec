@@ -56,7 +56,7 @@ func main() {
 			Usage: "Read the input as raw text, not a file path",
 		},
 		cli.BoolFlag{
-			Name:  "dry-run, d",
+			Name:  "dry-run, n",
 			Usage: "Show how would have been converted",
 		},
 	}

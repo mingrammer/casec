@@ -94,15 +94,15 @@ import (
 )
 
 func main() {
-    fmt.Println(casec.IsSnakeCase("this_is_snake"))
+    fmt.Println(casec.IsSnake("this_is_snake"))
     // Output: true
-    fmt.Println(casec.IsCamelCase("thisIsNot_camelCase"))
+    fmt.Println(casec.IsCamel("thisIsNot_camelCase"))
     // Output: false
     fmt.Println(casec.Invert("Invert Me"))
     // Output: iNVERT mE
-    fmt.Println(casec.ToCamelCase("write_rune"))
+    fmt.Println(casec.ToCamel("write_rune"))
     // Output: writeRune
-    fmt.Println(casec.ToSnakeCase("simpleJSONParser"))
+    fmt.Println(casec.ToSnake("simpleJSONParser"))
     // Output: simple_json_parser
 }
 ```

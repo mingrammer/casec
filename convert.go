@@ -34,7 +34,7 @@ func Invert(s string) string {
 }
 
 // ToUpperCase converts the string to uppercase
-func ToUpperCase(s string) string {
+func ToUpper(s string) string {
 	if !utf8.ValidString(s) {
 		return s
 	}
@@ -43,7 +43,7 @@ func ToUpperCase(s string) string {
 }
 
 // ToLowerCase converts the string to lowercase
-func ToLowerCase(s string) string {
+func ToLower(s string) string {
 	if !utf8.ValidString(s) {
 		return s
 	}
@@ -52,7 +52,7 @@ func ToLowerCase(s string) string {
 }
 
 // ToTitleCase converts the string to titlecase
-func ToTitleCase(s string) string {
+func ToTitle(s string) string {
 	if !utf8.ValidString(s) {
 		return s
 	}
@@ -62,7 +62,7 @@ func ToTitleCase(s string) string {
 
 // ToCamelCase converts the string to camelcase
 // Use strings.Map?
-func ToCamelCase(s string) string {
+func ToCamel(s string) string {
 	if !utf8.ValidString(s) {
 		return s
 	}
@@ -84,7 +84,7 @@ func ToCamelCase(s string) string {
 }
 
 // ToPascalCase converts the string to pascalcase
-func ToPascalCase(s string) string {
+func ToPascal(s string) string {
 	if !utf8.ValidString(s) {
 		return s
 	}
@@ -106,7 +106,7 @@ func ToPascalCase(s string) string {
 }
 
 // ToSnakeCase converts the string to snakecase
-func ToSnakeCase(s string) string {
+func ToSnake(s string) string {
 	if !utf8.ValidString(s) {
 		return s
 	}
@@ -138,7 +138,7 @@ func ToSnakeCase(s string) string {
 }
 
 // ToKebabCase converts the string to kebabcase
-func ToKebabCase(s string) string {
+func ToKebab(s string) string {
 	if !utf8.ValidString(s) {
 		return s
 	}
@@ -173,19 +173,19 @@ func ToKebabCase(s string) string {
 func ToCaseFor(c, s string) (string, error) {
 	switch c {
 	case "upper":
-		return ToUpperCase(s), nil
+		return ToUpper(s), nil
 	case "lower":
-		return ToLowerCase(s), nil
+		return ToLower(s), nil
 	case "title":
-		return ToTitleCase(s), nil
+		return ToTitle(s), nil
 	case "camel":
-		return ToCamelCase(s), nil
+		return ToCamel(s), nil
 	case "pascal":
-		return ToPascalCase(s), nil
+		return ToPascal(s), nil
 	case "snake":
-		return ToSnakeCase(s), nil
+		return ToSnake(s), nil
 	case "kebab", "lisp":
-		return ToKebabCase(s), nil
+		return ToKebab(s), nil
 	}
 	return "", errors.New(cfmt.Serrorf("%s is not valid case", c))
 }

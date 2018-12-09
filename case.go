@@ -14,57 +14,57 @@ const (
 )
 
 // IsUpperCase checks the string is uppercase
-func IsUpperCase(s string) bool {
+func IsUpper(s string) bool {
 	return s == strings.ToUpper(s)
 }
 
 // IsLowerCase checks the string is lowercase
-func IsLowerCase(s string) bool {
+func IsLower(s string) bool {
 	return s == strings.ToLower(s)
 }
 
 // IsTitleCase checks the string is titlecase
-func IsTitleCase(s string) bool {
-	return s == ToTitleCase(s)
+func IsTitle(s string) bool {
+	return s == ToTitle(s)
 }
 
 // IsCamelCase checks the string is camelcase
-func IsCamelCase(s string) bool {
-	return s == ToCamelCase(s)
+func IsCamel(s string) bool {
+	return s == ToCamel(s)
 }
 
 // IsPascalCase checks the string is pascalcase
-func IsPascalCase(s string) bool {
-	return s == ToPascalCase(s)
+func IsPascal(s string) bool {
+	return s == ToPascal(s)
 }
 
 // IsSnakeCase checks the string is snakecase
-func IsSnakeCase(s string) bool {
-	return s == ToSnakeCase(s)
+func IsSnake(s string) bool {
+	return s == ToSnake(s)
 }
 
 // IsKebabCase checks the string is kebabcase
-func IsKebabCase(s string) bool {
-	return s == ToKebabCase(s)
+func IsKebab(s string) bool {
+	return s == ToKebab(s)
 }
 
 // IsCaseOf checks whether the string is a specific case
 func IsCaseOf(c, s string) (bool, error) {
 	switch c {
 	case "upper":
-		return IsUpperCase(s), nil
+		return IsUpper(s), nil
 	case "lower":
-		return IsLowerCase(s), nil
+		return IsLower(s), nil
 	case "title":
-		return IsTitleCase(s), nil
+		return IsTitle(s), nil
 	case "camel":
-		return IsCamelCase(s), nil
+		return IsCamel(s), nil
 	case "pascal":
-		return IsPascalCase(s), nil
+		return IsPascal(s), nil
 	case "snake":
-		return IsSnakeCase(s), nil
+		return IsSnake(s), nil
 	case "kebab", "lisp":
-		return IsKebabCase(s), nil
+		return IsKebab(s), nil
 	}
 	return false, errors.New(cfmt.Serrorf("%s is not valid case", c))
 }

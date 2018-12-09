@@ -22,7 +22,7 @@ func TestInvert(t *testing.T) {
 	}
 }
 
-func TestToUpperCase(t *testing.T) {
+func TestToUpper(t *testing.T) {
 	testCases := []struct {
 		text     string
 		expected string
@@ -33,13 +33,13 @@ func TestToUpperCase(t *testing.T) {
 	}
 
 	for i, tc := range testCases {
-		if s := ToUpperCase(tc.text); s != tc.expected {
+		if s := ToUpper(tc.text); s != tc.expected {
 			t.Errorf("[%d] Expecting %v, got %v", i+1, tc.expected, s)
 		}
 	}
 }
 
-func TestToLowerCase(t *testing.T) {
+func TestToLower(t *testing.T) {
 	testCases := []struct {
 		text     string
 		expected string
@@ -50,13 +50,13 @@ func TestToLowerCase(t *testing.T) {
 	}
 
 	for i, tc := range testCases {
-		if s := ToLowerCase(tc.text); s != tc.expected {
+		if s := ToLower(tc.text); s != tc.expected {
 			t.Errorf("[%d] Expecting %v, got %v", i+1, tc.expected, s)
 		}
 	}
 }
 
-func TestToTitleCase(t *testing.T) {
+func TestToTitle(t *testing.T) {
 	testCases := []struct {
 		text     string
 		expected string
@@ -67,13 +67,13 @@ func TestToTitleCase(t *testing.T) {
 	}
 
 	for i, tc := range testCases {
-		if s := ToTitleCase(tc.text); s != tc.expected {
+		if s := ToTitle(tc.text); s != tc.expected {
 			t.Errorf("[%d] Expecting %v, got %v", i+1, tc.expected, s)
 		}
 	}
 }
 
-func TestToCamelCase(t *testing.T) {
+func TestToCamel(t *testing.T) {
 	testCases := []struct {
 		text     string
 		expected string
@@ -86,13 +86,13 @@ func TestToCamelCase(t *testing.T) {
 	}
 
 	for i, tc := range testCases {
-		if s := ToCamelCase(tc.text); s != tc.expected {
+		if s := ToCamel(tc.text); s != tc.expected {
 			t.Errorf("[%d] Expecting %v, got %v", i+1, tc.expected, s)
 		}
 	}
 }
 
-func TestToPascalCase(t *testing.T) {
+func TestToPascal(t *testing.T) {
 	testCases := []struct {
 		text     string
 		expected string
@@ -105,13 +105,13 @@ func TestToPascalCase(t *testing.T) {
 	}
 
 	for i, tc := range testCases {
-		if s := ToPascalCase(tc.text); s != tc.expected {
+		if s := ToPascal(tc.text); s != tc.expected {
 			t.Errorf("[%d] Expecting %v, got %v", i+1, tc.expected, s)
 		}
 	}
 }
 
-func TestToSnakeCase(t *testing.T) {
+func TestToSnake(t *testing.T) {
 	testCases := []struct {
 		text     string
 		expected string
@@ -124,13 +124,13 @@ func TestToSnakeCase(t *testing.T) {
 	}
 
 	for i, tc := range testCases {
-		if s := ToSnakeCase(tc.text); s != tc.expected {
+		if s := ToSnake(tc.text); s != tc.expected {
 			t.Errorf("[%d] Expecting %v, got %v", i+1, tc.expected, s)
 		}
 	}
 }
 
-func TestToKebabCase(t *testing.T) {
+func TestToKebab(t *testing.T) {
 	testCases := []struct {
 		text     string
 		expected string
@@ -143,7 +143,7 @@ func TestToKebabCase(t *testing.T) {
 	}
 
 	for i, tc := range testCases {
-		if s := ToKebabCase(tc.text); s != tc.expected {
+		if s := ToKebab(tc.text); s != tc.expected {
 			t.Errorf("[%d] Expecting %v, got %v", i+1, tc.expected, s)
 		}
 	}

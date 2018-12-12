@@ -1,0 +1,18 @@
+package main
+
+import (
+	"time"
+)
+
+func new_log(format string, delta time.Duration) string {
+	switch format {
+	case "apache_common":
+		return new_apache_common_log(delta)
+	case "apache_combined":
+		return new_apache_combined_log(delta)
+	case "apache_error":
+		return new_apache_error_log(delta)
+	default:
+		return ""
+	}
+}

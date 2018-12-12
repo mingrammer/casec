@@ -1,10 +1,12 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"io"
 	"log"
 	"os"
+	"regexp"
 
 	"github.com/mingrammer/cfmt"
 	"github.com/sergi/go-diff/diffmatchpatch"
@@ -47,6 +49,10 @@ func main() {
 			Name:  "to, t",
 			Usage: "target `CASE` in {upper,lower,title,camel,pascal,snake,kebab,lisp}",
 		},
+		cli.StringFlag{
+			Name:  "lines, l",
+			Usage: "set lines `M:N` to be converted. empty means first or last line",
+		},
 		cli.StringSliceFlag{
 			Name:  "ignore, i",
 			Usage: "ignore the text that matches the `PATTERNS`",
@@ -61,40 +67,50 @@ func main() {
 		},
 	}
 	app.Action = func(ctx *cli.Context) error {
-		var original string
-		var converted string
 		var err error
+		var orig string
+		var conv string
 		var writer io.WriteCloser
 
+		var src string
+		var tgt string
+		var start int
+		var end int
+		var ignoreRe *regexp.Regexp
 		if len(ctx.Args()) == 0 {
-			return cli.NewExitError(cfmt.Serror("There are no arguments"), errNoArguments)
+			return errors.New(cfmt.Serror("There are no arguments"))
 		}
-		if ctx.String("to") == "" {
-			return cli.NewExitError(cfmt.Serror("You must specify target case"), errInvalidOptions)
+		if src, err = parseSource(ctx.String("from")); err != nil {
+			return err
+		}
+		if tgt, err = parseTarget(ctx.String("to")); err != nil {
+			return err
+		}
+		if start, end, err = parseLines(ctx.String("lines")); err != nil {
+			return err
+		}
+		if ignoreRe, err = parseIgnore(ctx.StringSlice("ignore")); err != nil {
+			return err
 		}
 		input := ctx.Args().Get(0)
 
-		from := ctx.String("from")
-		to := ctx.String("to")
-		ignore := ctx.StringSlice("ignore")
-
 		if ctx.Bool("text") {
-			original, converted, err = convertFromText(input, from, to, ignore)
+			orig, conv = convertFromText(input, src, tgt, start, end, ignoreRe)
 			writer = os.Stdout
 		} else {
-			original, converted, err = convertFromFile(input, from, to, ignore)
+			orig, conv, err = convertFromFile(input, src, tgt, start, end, ignoreRe)
+			if err != nil {
+				return err
+			}
 			writer, _ = os.OpenFile(input, os.O_RDWR, 0644)
-		}
-		if err != nil {
-			return err
 		}
 
 		if ctx.Bool("dry-run") {
 			dmp := diffmatchpatch.New()
-			diffs := dmp.DiffMain(original, converted, false)
+			diffs := dmp.DiffMain(orig, conv, false)
 			fmt.Println(dmp.DiffPrettyText(diffs))
 		} else {
-			writer.Write([]byte(converted))
+			writer.Write([]byte(conv))
 			writer.Close()
 		}
 		return nil

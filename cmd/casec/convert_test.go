@@ -7,11 +7,11 @@ import (
 )
 
 func TestConvertText_Pascal2Snake(t *testing.T) {
-	orig, err := ioutil.ReadFile("../testdata/pascal2snake.py.in")
+	orig, err := ioutil.ReadFile("../../testdata/pascal2snake.py.in")
 	if err != nil {
 		t.Error(err.Error())
 	}
-	expected, err := ioutil.ReadFile("../testdata/pascal2snake.py.out")
+	expected, err := ioutil.ReadFile("../../testdata/pascal2snake.py.out")
 	if err != nil {
 		t.Error(err.Error())
 	}
@@ -23,11 +23,11 @@ func TestConvertText_Pascal2Snake(t *testing.T) {
 }
 
 func TestConvertText_Pascal2Snake_Ignore(t *testing.T) {
-	orig, err := ioutil.ReadFile("../testdata/pascal2snake_ignore.py.in")
+	orig, err := ioutil.ReadFile("../../testdata/pascal2snake_ignore.py.in")
 	if err != nil {
 		t.Error(err.Error())
 	}
-	expected, err := ioutil.ReadFile("../testdata/pascal2snake_ignore.py.out")
+	expected, err := ioutil.ReadFile("../../testdata/pascal2snake_ignore.py.out")
 	if err != nil {
 		t.Error(err.Error())
 	}
@@ -39,11 +39,11 @@ func TestConvertText_Pascal2Snake_Ignore(t *testing.T) {
 }
 
 func TestConvertText_Snake2Camel(t *testing.T) {
-	orig, err := ioutil.ReadFile("../testdata/snake2camel.go.in")
+	orig, err := ioutil.ReadFile("../../testdata/snake2camel.go.in")
 	if err != nil {
 		t.Error(err.Error())
 	}
-	expected, err := ioutil.ReadFile("../testdata/snake2camel.go.out")
+	expected, err := ioutil.ReadFile("../../testdata/snake2camel.go.out")
 	if err != nil {
 		t.Error(err.Error())
 	}
@@ -55,11 +55,11 @@ func TestConvertText_Snake2Camel(t *testing.T) {
 }
 
 func TestConvertText_Snake2Camel_Ignore(t *testing.T) {
-	orig, err := ioutil.ReadFile("../testdata/snake2camel_ignore.go.in")
+	orig, err := ioutil.ReadFile("../../testdata/snake2camel_ignore.go.in")
 	if err != nil {
 		t.Error(err.Error())
 	}
-	expected, err := ioutil.ReadFile("../testdata/snake2camel_ignore.go.out")
+	expected, err := ioutil.ReadFile("../../testdata/snake2camel_ignore.go.out")
 	if err != nil {
 		t.Error(err.Error())
 	}
@@ -71,11 +71,11 @@ func TestConvertText_Snake2Camel_Ignore(t *testing.T) {
 }
 
 func TestConvertText_Snake2Pascal_Lines_Ignore(t *testing.T) {
-	orig, err := ioutil.ReadFile("../testdata/snake2pascal_lines_ignore.go.in")
+	orig, err := ioutil.ReadFile("../../testdata/snake2pascal_lines_ignore.go.in")
 	if err != nil {
 		t.Error(err.Error())
 	}
-	expected, err := ioutil.ReadFile("../testdata/snake2pascal_lines_ignore.go.out")
+	expected, err := ioutil.ReadFile("../../testdata/snake2pascal_lines_ignore.go.out")
 	if err != nil {
 		t.Error(err.Error())
 	}

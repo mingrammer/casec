@@ -44,7 +44,6 @@ brew:
   commit_author:
     name: mingrammer
     email: mingrammer@gmail.com
-  folder: formula
   homepage: https://github.com/mingrammer/casec
   description: "A text case converter"
   install: bin.install "casec"

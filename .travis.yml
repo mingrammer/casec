@@ -10,5 +10,5 @@ os:
   - osx
 
 script:
-  - env GO111MODULE=on go build -o casec ./cmd
+  - env GO111MODULE=on go build ./cmd/casec
   - env GO111MODULE=on go test -v ./...

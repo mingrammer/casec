@@ -62,6 +62,12 @@ Convert all snake case to camel case.
 $ casec -f snake -t camel internal.go
 ```
 
+Convert only 20~50 lines from snake case to camel case.
+
+```bash
+$ casec -f snake -t camel -l 20:50 internal.go
+```
+
 Show how would have been converted. (dry-run)
 
 ```bash

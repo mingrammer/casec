@@ -108,8 +108,10 @@ func main() {
     // Output: iNVERT mE
     fmt.Println(casec.ToCamel("write_rune"))
     // Output: writeRune
-    fmt.Println(casec.ToSnake("simpleJSONParser"))
-    // Output: simple_json_parser
+    fmt.Println(casec.ToSnake("IPAddress"))
+    // Output: ip_address
+    fmt.Println(casec.ToKebab("simpleJSONParser"))
+    // Output: simple-json-parser
 }
 ```
 
@@ -117,10 +119,9 @@ func main() {
 
 casec separates the words with non-letters (except `-` and `_`) including `.` and `/` letters. So, the `ignore` option of casec can not recognize the dot-or-slash separated word (ex. `"github.com/mingrammer/cfmt"`) as a single chunk. So if you want to prevent the import path of Go source code, for example, `import "github.com/mingrammer/cfmt"` from converting, you should pass the ignore expression as `-i "^(github|com|mingrammer|cfmt)$"`.
 
-Here are the solutions that I'll consider making it an option for solving this issue.
+Here is a (maybe) solution for solving this issue.
 
 1. Treat the string surrounded with quotes ("" or '') as a single word optionally.
-2. Make an option for specifying the line number ranges for applying the conversion.
 
 ## License
 

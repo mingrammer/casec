@@ -20,8 +20,6 @@ const (
 	Version   = "0.1.2"
 	Usage     = "A text case converter"
 	UsageText = "casec [OPTIONS/FLAGS] [-x <text>] [<path>]"
-	ArgsUsage = "[path and text]"
-	// ArgsUsage = "<path> The file path that you want to convert case of contents"
 )
 
 // Custom exit codes
@@ -38,7 +36,6 @@ func main() {
 	app.Version = Version
 	app.Usage = Usage
 	app.UsageText = UsageText
-	app.ArgsUsage = ArgsUsage
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
 			Name:  "from, f",

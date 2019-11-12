@@ -1,8 +1,9 @@
 language: go
 
 go:
-  - "1.10"
-  - "1.11"
+  - "1.11.x"
+  - "1.12.x"
+  - "1.13.x"
   - "master"
 
 os:
@@ -11,4 +12,4 @@ os:
 
 script:
   - env GO111MODULE=on go build ./cmd/casec
-  - env GO111MODULE=on go test -v ./...
+  - env GO111MODULE=on go test -v .

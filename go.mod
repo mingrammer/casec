@@ -9,5 +9,7 @@ require (
 	github.com/sergi/go-diff v1.0.0
 	github.com/stretchr/testify v1.2.2 // indirect
 	github.com/urfave/cli v1.20.0
-	golang.org/x/sys v0.0.0-20181206074257-70b957f3b65e // indirect
+	golang.org/x/sys v0.0.0-20181212120007-b05ddf57801d // indirect
 )
+
+go 1.13

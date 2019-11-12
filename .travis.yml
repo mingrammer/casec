@@ -8,6 +8,9 @@ os:
   - linux
   - osx
 
+env:
+  - GO111MODULE=on
+
 script:
-  - env GO111MODULE=on go build ./cmd/casec
-  - env GO111MODULE=on go test -v .
+  - go build ./cmd/casec
+  - go test -v .

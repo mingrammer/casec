@@ -24,7 +24,6 @@ func parseNumber(s string) (int, error) {
 	return i, nil
 }
 
-// parse? parse?
 func parseSource(s string) (string, error) {
 	if s == "" {
 		return "", nil

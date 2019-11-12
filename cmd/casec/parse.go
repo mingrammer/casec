@@ -9,9 +9,7 @@ import (
 	"github.com/mingrammer/cfmt"
 )
 
-var (
-	validCases = [8]string{"upper", "lower", "title", "camel", "pascal", "snake", "kebab", "lisp"}
-)
+var validCases = [8]string{"upper", "lower", "title", "camel", "pascal", "snake", "kebab", "lisp"}
 
 func parseNumber(s string) (int, error) {
 	if s == "" {

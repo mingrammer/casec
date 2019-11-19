@@ -17,7 +17,7 @@ const (
 	AppName   = "casec"
 	Author    = "mingrammer"
 	Email     = "mingrammer@gmail.com"
-	Version   = "0.1.2"
+	Version   = "0.1.3"
 	Usage     = "A text case converter"
 	UsageText = "casec [OPTIONS/FLAGS] [-x <text>] [<path>]"
 )

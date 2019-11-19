@@ -126,6 +126,7 @@ func TestParseLines(t *testing.T) {
 		{input: "5:", expected1: 5, expected2: 0},
 		{input: ":10", expected1: 0, expected2: 10},
 		{input: ":", expected1: 0, expected2: 0},
+		{input: "", expected1: 0, expected2: 0},
 	}
 
 	failingTestCases := []struct {

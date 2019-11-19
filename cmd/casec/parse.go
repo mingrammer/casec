@@ -47,17 +47,19 @@ func parseTarget(s string) (string, error) {
 }
 
 func parseLines(lines string) (int, int, error) {
-	var err error
-	var start int
-	var end int
+	if lines == "" {
+		return 0, 0, nil
+	}
 	split := strings.Split(lines, ":")
 	if len(split) != 2 {
 		return 0, 0, errors.New(cfmt.Serror("lines must be 'M:N' form"))
 	}
-	if start, err = parseNumber(split[0]); err != nil {
+	start, err := parseNumber(split[0])
+	if err != nil {
 		return 0, 0, err
 	}
-	if end, err = parseNumber(split[1]); err != nil {
+	end, err := parseNumber(split[1])
+	if err != nil {
 		return 0, 0, err
 	}
 	if end > 0 && start > end {
